@@ -12,9 +12,9 @@ export default {
 			},
 			pureWhite: '#FFFFFF',
 			gray: {
-				lightGrey: '#F4F6F8',
-				neutralGrey: '#9DAEC2',
-				darkGray: '#6E8098',
+				light: '#F4F6F8',
+				neutral: '#9DAEC2',
+				dark: '#6E8098',
 			},
 		},
 
