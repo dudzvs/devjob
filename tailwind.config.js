@@ -4,6 +4,7 @@ export default {
 	darkMode: 'class',
 	theme: {
 		colors: {
+			transparent: 'transparent',
 			blue: {
 				thick: '#5964E0',
 				soft: '#939BF4',
@@ -29,6 +30,8 @@ export default {
 				'desktop-pattern-header': "url('/images/desktop/bg-pattern-header.svg')",
 				'icon-check': "url('/images/common/icon-check.svg')",
 				'icon-filter': "url('/images/common/icon-filter.svg')",
+				'icon-search': "url('/images/common/icon-search.svg')",
+				'icon-search-white': "url('/images/common/icon-search-white.svg')",
 				'icon-location': "url('/images/common/icon-location.svg')",
 				'icon-moon': "url('/images/common/icon-moon.svg')",
 				'icon-sun': "url('/images/common/icon-sun.svg')",

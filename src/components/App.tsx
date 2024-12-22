@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './Header.tsx';
+import Main from './Main';
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
@@ -24,6 +25,7 @@ function App() {
 	return (
 		<>
 			<Header darkMode={darkMode} onDarkModeChange={() => setDarkMode(!darkMode)} />
+			<Main />
 		</>
 	);
 }
