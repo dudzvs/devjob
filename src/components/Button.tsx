@@ -1,9 +1,9 @@
 import { ButtonProps } from '../Types.ts';
 
-function Button({ typeButton, classes, children }: ButtonProps) {
+function Button({ typeButton, classes, children, onSmash }: ButtonProps) {
 	return (
-		<button type={typeButton} className={`${classes} bg-center bg-no-repeat`}>
-			<span className="hidden font-bold text-pureWhite sm:block">{children}</span>
+		<button onClick={onSmash} type={typeButton} className={`${classes} bg-center bg-no-repeat`}>
+			{children}
 		</button>
 	);
 }

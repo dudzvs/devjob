@@ -1,9 +1,10 @@
 import Form from './Form';
+import { FormProps } from '../Types.ts';
 
-function SearchBar({ data, setData, handleSubmit }) {
+function SearchBar({ formData, setFormData, onSubmit }: FormProps) {
 	return (
 		<div className="mt-[-35px] flex h-20 w-10/12 rounded bg-gray-light shadow-2xl">
-			<Form onSubmit={handleSubmit} formData={data} setFormData={setData} />
+			<Form onSubmit={onSubmit} formData={formData} setFormData={setFormData} />
 		</div>
 	);
 }

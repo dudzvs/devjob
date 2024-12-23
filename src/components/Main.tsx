@@ -10,11 +10,12 @@ function Main() {
 
 	const handelSubmitEvent = (e: React.FormEvent) => {
 		e.preventDefault();
+		console.log(formData.title, formData.location, formData.isFullTime);
 	};
 
 	return (
 		<main className="flex justify-center">
-			<SearchBar handleSubmit={handelSubmitEvent} data={formData} setData={setFormData} />
+			<SearchBar onSubmit={handelSubmitEvent} formData={formData} setFormData={setFormData} />
 		</main>
 	);
 }
