@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Job } from '../Types.ts';
 import SearchBar from './SearchBar.tsx';
+import Card from './Card.tsx';
 
 function Main() {
 	const [jobs, setJobs] = useState<Job[]>([]);
@@ -32,8 +33,13 @@ function Main() {
 	};
 
 	return (
-		<main className="flex justify-center">
+		<main className="flex flex-col items-center justify-center">
 			<SearchBar onSubmit={handleSubmitEvent} formData={formData} setFormData={setFormData} />
+			<div className="flex flex-col gap-10 md:grid md:grid-cols-3">
+				{jobs.map((job) => (
+					<Card key={job.id} {...job} />
+				))}
+			</div>
 		</main>
 	);
 }

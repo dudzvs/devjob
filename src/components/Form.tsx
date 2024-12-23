@@ -72,7 +72,7 @@ function Form({ formData, setFormData, onSubmit }: FormProps) {
 			{modalOpen && (
 				<>
 					<div
-						className="fixed inset-0 bg-blue-midnight opacity-50"
+						className="fixed inset-0 z-20 bg-blue-midnight opacity-50"
 						onClick={handleModalClose}
 					></div>
 
@@ -89,7 +89,7 @@ function Form({ formData, setFormData, onSubmit }: FormProps) {
 
 function Modal({ handleChange, location, isFullTime }: ModalProps) {
 	return (
-		<div className="absolute left-1/2 top-1/2 flex w-[327px] -translate-x-1/2 -translate-y-1/2 transform flex-col gap-10 rounded bg-gray-light p-8">
+		<div className="absolute left-1/2 top-1/2 z-40 flex w-[327px] -translate-x-1/2 -translate-y-1/2 transform flex-col gap-10 rounded bg-gray-light p-8">
 			<Input
 				inputType="text"
 				inputPlaceholder="Filter By Location..."
