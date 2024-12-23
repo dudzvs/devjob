@@ -1,25 +1,32 @@
-import { useState } from 'react';
+import React from 'react';
 import { InputProps } from '../Types.ts';
+import { FormProps } from '../Types.ts';
 import Button from './Button.tsx';
 
-function Form() {
-	const [value, setValue] = useState('');
+function Form({ formData, setFormData, onSubmit }: FormProps) {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, type, value, checked } = e.target;
+		setFormData({
+			...formData,
+			[name]: type === 'checkbox' ? checked : value,
+		});
+	};
 
 	return (
-		<form className="flex w-full items-center justify-between p-4">
+		<form onSubmit={onSubmit} className="flex w-full items-center justify-between p-4">
 			<Input
 				inputType="text"
 				inputPlaceholder="Filter by title..."
-				inputValue={value}
-				onInputChange={(e) => setValue(e.target.value)}
+				inputValue={formData.title}
+				onInputChange={handleChange}
 				inputName="title"
 				classes="sm:bg-icon-search bg-no-repeat"
 			/>
 			<Input
 				inputType="text"
 				inputPlaceholder="Filter by location..."
-				inputValue={value}
-				onInputChange={(e) => setValue(e.target.value)}
+				inputValue={formData.location}
+				onInputChange={handleChange}
 				inputName="location"
 				classes="hidden sm:block bg-icon-location bg-no-repeat"
 			/>
@@ -32,8 +39,8 @@ function Form() {
 			<Input
 				inputType={'checkbox'}
 				inputPlaceholder={''}
-				inputValue={''}
-				onInputChange={(e) => setValue(e.target.value)}
+				inputValue={formData.isFullTime}
+				onInputChange={handleChange}
 				inputName={'isFullTime'}
 				classes={'hidden'}
 				inputId="fullTime"
@@ -65,7 +72,9 @@ function Input({
 			className={`${classes} w-full bg-transparent pl-2 outline-none sm:pl-10`}
 			type={inputType}
 			placeholder={inputPlaceholder}
-			value={inputValue}
+			{...(inputType === 'checkbox'
+				? { checked: inputValue as boolean }
+				: { value: inputValue as string })}
 			onChange={onInputChange}
 			name={inputName}
 			id={inputId}
