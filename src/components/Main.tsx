@@ -3,7 +3,7 @@ import { Job } from '../Types.ts';
 import SearchBar from './SearchBar.tsx';
 import Card from './Card.tsx';
 
-function Main() {
+function Main({ darkMode, onDarkModeChange }: { darkMode: boolean; onDarkModeChange: () => void }) {
 	const [jobs, setJobs] = useState<Job[]>([]);
 
 	const [formData, setFormData] = useState({
@@ -35,9 +35,9 @@ function Main() {
 	return (
 		<main className="flex flex-col items-center justify-center">
 			<SearchBar onSubmit={handleSubmitEvent} formData={formData} setFormData={setFormData} />
-			<div className="flex flex-col gap-10 md:grid md:grid-cols-3">
+			<div className="flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-24">
 				{jobs.map((job) => (
-					<Card key={job.id} {...job} />
+					<Card key={job.id} {...job} darkMode={darkMode} onDarkModeChange={onDarkModeChange} />
 				))}
 			</div>
 		</main>

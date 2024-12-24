@@ -25,7 +25,7 @@ function App() {
 	return (
 		<>
 			<Header darkMode={darkMode} onDarkModeChange={() => setDarkMode(!darkMode)} />
-			<Main />
+			<Main darkMode={darkMode} onDarkModeChange={() => setDarkMode(!darkMode)} />
 		</>
 	);
 }

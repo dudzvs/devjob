@@ -40,7 +40,7 @@ export type ModalProps = {
 };
 
 export type Job = {
-	id: number;
+	id?: number;
 	company: string;
 	logo: string;
 	logoBackground: string;
