@@ -44,7 +44,7 @@ function Main({ darkMode, onDarkModeChange }: { darkMode: boolean; onDarkModeCha
 	};
 
 	return (
-		<main className="flex flex-col items-center justify-center">
+		<main className="flex flex-col items-center justify-center pb-10 dark:bg-blue-veryDark">
 			<SearchBar onSubmit={handleSubmitEvent} formData={formData} setFormData={setFormData} />
 			<div className="flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-24">
 				{filteredJobs.map((job) => (

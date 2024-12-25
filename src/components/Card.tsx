@@ -38,7 +38,7 @@ function Card({
 		<>
 			<div
 				onClick={() => setCardOpen(!cardOpen)}
-				className="relative flex cursor-pointer flex-col gap-4 rounded p-6 pl-8 pr-8"
+				className="relative flex w-[320px] cursor-pointer flex-col gap-4 rounded p-6 pl-8 pr-8 dark:bg-blue-midnight"
 			>
 				<div
 					className="absolute top-[-20px] flex h-12 w-12 items-center justify-center rounded"
@@ -51,7 +51,7 @@ function Card({
 					<span className="h-[1px] w-[1px] rounded-full bg-gray-dark p-0.5"></span>
 					<span>{contract}</span>
 				</div>
-				<h4 className="font-bold">{position}</h4>
+				<h4 className="font-bold dark:text-pureWhite">{position}</h4>
 				<p className="text-gray-dark">{company}</p>
 				<p className="mt-6 font-bold text-blue-thick">{location}</p>
 			</div>
@@ -94,8 +94,8 @@ function CardDetails({
 	role,
 }: Job) {
 	return (
-		<div className="flex w-full flex-col items-center p-8">
-			<div className="relative mb-20 mt-[-57px] flex w-full flex-col items-center rounded bg-gray-light p-8 md:w-9/12 md:flex-row md:justify-between">
+		<div className="flex w-full flex-col items-center p-8 dark:bg-blue-veryDark">
+			<div className="relative mb-20 mt-[-57px] flex w-full flex-col items-center rounded bg-gray-light p-8 dark:bg-blue-veryDark md:w-9/12 md:flex-row md:justify-between">
 				<div
 					className="absolute top-[-20px] flex h-12 w-12 items-center justify-center rounded md:left-0 md:top-0 md:h-full md:w-[140px]"
 					style={{ backgroundColor: logoBackground }}
@@ -103,7 +103,7 @@ function CardDetails({
 					<img className="md:w-full md:p-6" src={logo} alt={`Logo ${company}`} />
 				</div>
 				<div className="flex flex-col items-center md:ml-40 md:items-start">
-					<h4 className="mb-3.5 mt-11 font-bold md:mb-0 md:mt-2">{company}</h4>
+					<h4 className="mb-3.5 mt-11 font-bold dark:text-pureWhite md:mb-0 md:mt-2">{company}</h4>
 					<span className="text-gray-dark">{website}</span>
 				</div>
 				<button className="mt-11 font-bold text-blue-thick md:mr-8 md:mt-0">
@@ -119,7 +119,9 @@ function CardDetails({
 				</div>
 				<div className="md:flex md:items-start md:justify-between">
 					<div>
-						<h4 className="text-xl font-bold text-blue-midnight">{position}</h4>
+						<h4 className="text-xl font-bold text-blue-midnight dark:text-pureWhite">
+							{position}
+						</h4>
 						<p className="mb-8 mt-[12px] text-sm font-bold text-blue-thick">{location}</p>
 					</div>
 					<Button
@@ -130,14 +132,18 @@ function CardDetails({
 				</div>
 
 				<p className="mb-8">{description}</p>
-				<h5 className="mb-4 self-start text-xl font-bold text-blue-midnight">Requirements</h5>
+				<h5 className="mb-4 self-start text-xl font-bold text-blue-midnight dark:text-pureWhite">
+					Requirements
+				</h5>
 				<p className="mb-8">{requirements.content}</p>
 				<ul className="mb-8 ml-8 flex list-disc flex-col gap-3">
 					{requirements.items.map((item) => (
 						<li className="pl-2">{item}</li>
 					))}
 				</ul>
-				<h5 className="mb-4 self-start text-xl font-bold text-blue-midnight">What You Will Do</h5>
+				<h5 className="mb-4 self-start text-xl font-bold text-blue-midnight dark:text-pureWhite">
+					What You Will Do
+				</h5>
 				<p className="mb-8">{role.content}</p>
 				<ol className="ml-8 flex list-decimal flex-col gap-3 marker:font-bold marker:text-blue-thick">
 					{role.items.map((item) => (
@@ -147,7 +153,7 @@ function CardDetails({
 
 				<div className="md:mt-44 md:flex md:items-center md:justify-between">
 					<div>
-						<span className="hidden text-xl font-bold text-blue-midnight md:block">
+						<span className="hidden text-xl font-bold text-blue-midnight dark:text-pureWhite md:block">
 							{position}
 						</span>
 						<span className="hidden md:block">So Digital Inc.</span>

@@ -1,7 +1,7 @@
 function Header({ darkMode, onDarkModeChange }: { darkMode: boolean; onDarkModeChange: () => void }) {
 	return (
 		<>
-			<header className="flex h-[136px] w-full justify-between bg-mobile-pattern-header bg-cover bg-center p-8 md:bg-tablet-pattern-header lg:bg-desktop-pattern-header lg:pl-40 lg:pr-40">
+			<header className="flex h-[136px] w-full justify-between bg-gray-light bg-mobile-pattern-header bg-cover bg-center p-8 dark:bg-blue-veryDark md:bg-tablet-pattern-header lg:bg-desktop-pattern-header lg:pl-40 lg:pr-40">
 				<div className="h-8 w-32 bg-logo bg-no-repeat"></div>
 				<Switch onToggle={onDarkModeChange} darkMode={darkMode} />
 			</header>

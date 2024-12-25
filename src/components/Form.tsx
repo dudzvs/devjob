@@ -30,7 +30,7 @@ function Form({ formData, setFormData, onSubmit }: FormProps) {
 				inputValue={formData.title}
 				onInputChange={handleChange}
 				inputName="title"
-				classes="sm:bg-icon-search bg-no-repeat"
+				classes="sm:bg-icon-search bg-no-repeat dark:text-pureWhite"
 			/>
 			<Input
 				inputType="text"
@@ -38,7 +38,7 @@ function Form({ formData, setFormData, onSubmit }: FormProps) {
 				inputValue={formData.location}
 				onInputChange={handleChange}
 				inputName="location"
-				classes="hidden sm:block bg-icon-location bg-no-repeat"
+				classes="hidden sm:block bg-icon-location bg-no-repeat dark:text-pureWhite"
 			/>
 			<Input
 				inputType={'checkbox'}
@@ -51,9 +51,9 @@ function Form({ formData, setFormData, onSubmit }: FormProps) {
 			/>
 			<label
 				htmlFor="fullTime"
-				className="mr-4 hidden h-6 w-6 cursor-pointer rounded border-2 border-blue-thick bg-center bg-no-repeat p-3 peer-checked:bg-blue-thick peer-checked:bg-icon-check sm:block"
+				className="mr-4 hidden h-6 w-6 cursor-pointer rounded border-2 border-blue-thick bg-center bg-no-repeat p-3 peer-checked:bg-blue-thick peer-checked:bg-icon-check dark:border-0 dark:bg-gray-dark sm:block"
 			></label>
-			<span className="hidden text-nowrap font-bold sm:block">Full Time Only</span>
+			<span className="hidden text-nowrap font-bold dark:text-pureWhite sm:block">Full Time Only</span>
 
 			<div className="flex items-center gap-6">
 				<Button
